@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "sfmod",
+  "version": "${version}",
+  "name": "SpringFestivalMod",
+  "description": "",
+  "authors": ["alazeprt"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/sfmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "top.alazeprt.sfmod.SpringFestivalClientMod"
+    ],
+    "main": [
+      "top.alazeprt.sfmod.SpringFestivalMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
