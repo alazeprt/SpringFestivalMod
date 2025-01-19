@@ -52,7 +52,7 @@ public class AndyLauModel<T extends AndyLauEntity> extends SinglePartEntityModel
 
 	private void setHeadAngles(float yaw, float pitch) {
 		yaw = MathHelper.clamp(yaw, -30F, 30F);
-		pitch = MathHelper.clamp(pitch, -25F, 45F);
+		pitch = MathHelper.clamp(pitch, -5F, 10F);
 
 		this.head.yaw = yaw * 0.017453292F;
 		this.head.pitch = pitch * 0.017453292F;

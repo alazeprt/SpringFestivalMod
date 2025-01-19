@@ -5,12 +5,12 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import top.alazeprt.sfmod.entity.custom.AndyLauEntity;
+import top.alazeprt.sfmod.item.CustomSpawnEgg;
 
 public class SpringFestivalMod implements ModInitializer {
 
@@ -25,7 +25,7 @@ public class SpringFestivalMod implements ModInitializer {
     public static final Item ANDY_LAU_EGG = Registry.register(
             Registries.ITEM,
             Identifier.of("sfmod", "andy_lau_egg"),
-            new SpawnEggItem(ANDY_LAU, 0xDD0000, 0xFF4444, new Item.Settings()));
+            new CustomSpawnEgg(ANDY_LAU, new Item.Settings()));
 
     public static SoundEvent registerSound(String name) {
         Identifier id = Identifier.of("sfmod", name);

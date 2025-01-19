@@ -24,6 +24,8 @@ import top.alazeprt.sfmod.SpringFestivalMod;
 import java.util.HashMap;
 import java.util.Map;
 
+import static top.alazeprt.sfmod.SpringFestivalMod.ANDY_LAU_MUSIC;
+
 public class AndyLauEntity extends PassiveEntity {
 
     private static final Logger log = LoggerFactory.getLogger(AndyLauEntity.class);
@@ -89,11 +91,11 @@ public class AndyLauEntity extends PassiveEntity {
             setupAnimationStates();
         }
         this.getWorld().getPlayers().forEach(player -> {
-            if (this.distanceTo(player) < 20 && map.getOrDefault(player.getUuidAsString(), 0) <= 0) {
-                player.playSound(SpringFestivalMod.ANDY_LAU_MUSIC, 1.0f, 1.0f);
-                map.put(player.getUuidAsString(), 200);
-            } else if (map.getOrDefault(player.getUuidAsString(), 0) <= 0) {
-                map.remove(player.getUuidAsString());
+            if (this.distanceTo(player) < 20 && map.getOrDefault(this.getUuidAsString(), 0) <= 0) {
+                this.playSound(SpringFestivalMod.ANDY_LAU_MUSIC, 1.0f, 1.0f);
+                map.put(this.getUuidAsString(), 200);
+            } else if (map.getOrDefault(this.getUuidAsString(), 0) <= 0) {
+                map.remove(this.getUuidAsString());
             }
         });
     }
