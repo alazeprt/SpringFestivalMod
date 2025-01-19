@@ -108,7 +108,7 @@ public class AndyLauAnimations {
                         new Transformation(Transformation.Targets.TRANSLATE,
                                 new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                         Transformation.Interpolations.CUBIC),
-                                new Keyframe(1f, AnimationHelper.createTranslationalVector(0.9f, -0.1f, 0f),
+                                new Keyframe(1f, AnimationHelper.createTranslationalVector(0.9f, -0.2f, 0f),
                                         Transformation.Interpolations.CUBIC),
                                 new Keyframe(2f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                         Transformation.Interpolations.CUBIC)))
