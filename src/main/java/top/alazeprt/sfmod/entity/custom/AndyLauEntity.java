@@ -1,7 +1,6 @@
 package top.alazeprt.sfmod.entity.custom;
 
 import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
@@ -9,10 +8,7 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.mob.ZombieEntity;
-import net.minecraft.entity.passive.CamelEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -21,13 +17,21 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import top.alazeprt.sfmod.SpringFestivalMod;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AndyLauEntity extends PassiveEntity {
 
+    private static final Logger log = LoggerFactory.getLogger(AndyLauEntity.class);
     public final AnimationState walkAnimationState = new AnimationState();
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+
+    public static final Map<String, Integer> map = new HashMap<>();
 
 
     public AndyLauEntity(EntityType<? extends PassiveEntity> entityType, World world) {
@@ -55,11 +59,6 @@ public class AndyLauEntity extends PassiveEntity {
         this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
         this.goalSelector.add(8, new LookAroundGoal(this));
     }
-
-//    @Override
-//    protected @Nullable SoundEvent getAmbientSound() {
-//        return SoundEvents.MUSIC_GAME.value();
-//    }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource source) {
@@ -89,6 +88,14 @@ public class AndyLauEntity extends PassiveEntity {
         if (this.getWorld().isClient) {
             setupAnimationStates();
         }
+        this.getWorld().getPlayers().forEach(player -> {
+            if (this.distanceTo(player) < 20 && map.getOrDefault(player.getUuidAsString(), 0) <= 0) {
+                player.playSound(SpringFestivalMod.ANDY_LAU_MUSIC, 1.0f, 1.0f);
+                map.put(player.getUuidAsString(), 200);
+            } else if (map.getOrDefault(player.getUuidAsString(), 0) <= 0) {
+                map.remove(player.getUuidAsString());
+            }
+        });
     }
 
     private void setupAnimationStates() {
@@ -97,6 +104,12 @@ public class AndyLauEntity extends PassiveEntity {
             this.idleAnimationState.start(this.age);
         } else {
             --this.idleAnimationTimeout;
+        }
+    }
+
+    public static void tickMap() {
+        for (String key : map.keySet()) {
+            map.put(key, map.get(key) - 1);
         }
     }
 }

@@ -17,6 +17,12 @@
       "top.alazeprt.sfmod.SpringFestivalMod"
     ]
   },
+  "mixins": [
+    {
+      "config": "sfmod.mixins.json",
+      "environment": "*"
+    }
+  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
