@@ -47,12 +47,6 @@ public class FrozenAndyLauBlock extends BlockWithEntity {
     }
 
     @Override
-    protected void spawnBreakParticles(World world, PlayerEntity player, BlockPos pos, BlockState state) {
-        state = Blocks.ICE.getDefaultState();
-        super.spawnBreakParticles(world, player, pos, state);
-    }
-
-    @Override
     protected BlockState rotate(BlockState state, BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }

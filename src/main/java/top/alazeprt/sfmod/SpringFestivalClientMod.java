@@ -15,5 +15,9 @@ public class SpringFestivalClientMod implements ClientModInitializer {
         EntityRendererRegistry.register(SpringFestivalMod.ANDY_LAU, AndyLauRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MobModelLayers.ANDY_LAU, AndyLauModel::getTexturedModelData);
         BlockRenderLayerMap.INSTANCE.putBlock(SpringFestivalMod.FROZEN_ANDY_LAU_BLOCK, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(SpringFestivalMod.FUYIN1, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SpringFestivalMod.FUYIN2, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SpringFestivalMod.FUYIN3, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(SpringFestivalMod.FUYIN4, RenderLayer.getCutout());
     }
 }

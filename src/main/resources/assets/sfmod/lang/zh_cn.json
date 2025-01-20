@@ -1,7 +1,15 @@
 {
   "entity.sfmod.andy_lau": "刘德华",
   "item.sfmod.andy_lau_egg": "刘德华",
+  "item.sfmod.hongbao1": "红包",
+  "item.sfmod.hongbao2": "红包",
+  "item.sfmod.hongbao3": "红包",
+  "item.sfmod.hongbao4": "红包",
   "block.sfmod.frozen_andy_lau": "冰冻的刘德华",
+  "block.sfmod.fuyin1": "福字",
+  "block.sfmod.fuyin2": "福字",
+  "block.sfmod.fuyin3": "福字",
+  "block.sfmod.fuyin4": "福字",
   "sounds.sfmod.andy_lau_music": "恭喜发财 - 刘德华",
   "itemGroup.sfmod.sf_group": "新春模组"
 }

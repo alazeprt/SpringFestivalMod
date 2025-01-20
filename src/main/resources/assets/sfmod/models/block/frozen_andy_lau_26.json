@@ -3,7 +3,8 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"1": "sfmod:block/frozen_andy_lau",
-		"2": "block/ice"
+		"2": "block/ice",
+		"particle": "sfmod:block/frozen_andy_lau"
 	},
 	"elements": [
 		{
