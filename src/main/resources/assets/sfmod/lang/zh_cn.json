@@ -1,5 +1,7 @@
 {
   "entity.sfmod.andy_lau": "刘德华",
-  "item.sfmod.andy_lau_egg": "刘德华生成蛋",
-  "sounds.sfmod.andy_lau_music": "恭喜发财 - 刘德华"
+  "item.sfmod.andy_lau_egg": "刘德华",
+  "block.sfmod.frozen_andy_lau": "冰冻的刘德华",
+  "sounds.sfmod.andy_lau_music": "恭喜发财 - 刘德华",
+  "itemGroup.sfmod.sf_group": "新春模组"
 }

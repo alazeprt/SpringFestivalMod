@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sfmod:item/frozen_andy_lau"
+  }
+}

@@ -94,8 +94,6 @@ public class AndyLauEntity extends PassiveEntity {
             if (this.distanceTo(player) < 20 && map.getOrDefault(this.getUuidAsString(), 0) <= 0) {
                 this.playSound(SpringFestivalMod.ANDY_LAU_MUSIC, 1.0f, 1.0f);
                 map.put(this.getUuidAsString(), 200);
-            } else if (map.getOrDefault(this.getUuidAsString(), 0) <= 0) {
-                map.remove(this.getUuidAsString());
             }
         });
     }
