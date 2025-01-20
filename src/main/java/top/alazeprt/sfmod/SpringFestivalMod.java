@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.StainedGlassBlock;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.*;
@@ -20,6 +21,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import top.alazeprt.sfmod.block.FrozenAndyLauBlock;
+import top.alazeprt.sfmod.block.FrozenAndyLauBlockEntity;
 import top.alazeprt.sfmod.entity.custom.AndyLauEntity;
 import top.alazeprt.sfmod.item.CustomSpawnEgg;
 
@@ -37,6 +39,12 @@ public class SpringFestivalMod implements ModInitializer {
             Registries.BLOCK,
             Identifier.of("sfmod", "frozen_andy_lau"),
             new FrozenAndyLauBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(0.5f).slipperiness(0.98F).sounds(BlockSoundGroup.GLASS).nonOpaque())
+    );
+
+    public static final BlockEntityType<FrozenAndyLauBlockEntity> FROZEN_ANDY_LAU_BLOCK_ENTITY = Registry.register(
+            Registries.BLOCK_ENTITY_TYPE,
+            Identifier.of("sfmod", "frozen_andy_lau"),
+            BlockEntityType.Builder.create(FrozenAndyLauBlockEntity::new, FROZEN_ANDY_LAU_BLOCK).build()
     );
 
     public static final Item ANDY_LAU_EGG = Registry.register(
