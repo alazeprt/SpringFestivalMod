@@ -10,6 +10,17 @@
   "block.sfmod.fuyin2": "福字",
   "block.sfmod.fuyin3": "福字",
   "block.sfmod.fuyin4": "福字",
+  "block.sfmod.couplets_horizontal": "水平空春联",
+  "block.sfmod.couplets_vertical": "竖直空春联",
+  "block.sfmod.couplets_top_1": "第一幅春联 (顶部)",
+  "block.sfmod.couplets_top_2": "第二幅春联 (顶部)",
+  "block.sfmod.couplets_top_3": "第三幅春联 (顶部)",
+  "block.sfmod.couplets_left_1": "第一幅春联 (左侧)",
+  "block.sfmod.couplets_left_2": "第二幅春联 (左侧)",
+  "block.sfmod.couplets_left_3": "第三幅春联 (左侧)",
+  "block.sfmod.couplets_right_1": "第一幅春联 (右侧)",
+  "block.sfmod.couplets_right_2": "第二幅春联 (右侧)",
+  "block.sfmod.couplets_right_3": "第三幅春联 (右侧)",
   "sounds.sfmod.andy_lau_music": "恭喜发财 - 刘德华",
   "itemGroup.sfmod.sf_group": "新春模组"
 }

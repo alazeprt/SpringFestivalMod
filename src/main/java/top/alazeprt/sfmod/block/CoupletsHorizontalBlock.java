@@ -11,15 +11,15 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class FuyinBlock extends HorizontalFacingBlock {
-    public static final MapCodec<FuyinBlock> CODEC = createCodec(FuyinBlock::new);
+public class CoupletsHorizontalBlock extends HorizontalFacingBlock {
+    public static final MapCodec<CoupletsHorizontalBlock> CODEC = createCodec(CoupletsHorizontalBlock::new);
 
     @Override
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
         return CODEC;
     }
 
-    public FuyinBlock(AbstractBlock.Settings settings) {
+    public CoupletsHorizontalBlock(AbstractBlock.Settings settings) {
         super(settings);
         setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
@@ -33,10 +33,10 @@ public class FuyinBlock extends HorizontalFacingBlock {
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
         Direction dir = state.get(FACING);
         return switch (dir) {
-            case NORTH -> VoxelShapes.cuboid(0.0f, 0.0f, 15/16f, 1.0f, 1.0f, 1f);
-            case SOUTH -> VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1/16f);
-            case EAST -> VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1/16f, 1.0f, 1.0f);
-            case WEST -> VoxelShapes.cuboid(15/16f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+            case NORTH -> VoxelShapes.cuboid(0.0f, 5/16f, 15.8/16f, 1.0f, 11/16f, 1f);
+            case SOUTH -> VoxelShapes.cuboid(0.0f, 5/16f, 0.0f, 1.0f, 11/16f, 0.2/16f);
+            case EAST -> VoxelShapes.cuboid(0.0f, 5/16f, 0.0f, 0.2/16f, 11/16f, 1.0f);
+            case WEST -> VoxelShapes.cuboid(15.8/16f, 5/16f, 0.0f, 1.0f, 11/16f, 1.0f);
             default -> VoxelShapes.fullCube();
         };
     }

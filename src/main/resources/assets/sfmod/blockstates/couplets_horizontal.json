@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sfmod:block/couplets_horizontal", "uvlock": true },
+    "facing=east":  { "model": "sfmod:block/couplets_horizontal", "y":  90, "uvlock": true },
+    "facing=south": { "model": "sfmod:block/couplets_horizontal", "y": 180, "uvlock": true },
+    "facing=west":  { "model": "sfmod:block/couplets_horizontal", "y": 270, "uvlock": true }
+  }
+}

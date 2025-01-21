@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.component.ComponentType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.*;
@@ -18,9 +19,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import top.alazeprt.sfmod.block.FrozenAndyLauBlock;
-import top.alazeprt.sfmod.block.FrozenAndyLauBlockEntity;
-import top.alazeprt.sfmod.block.FuyinBlock;
+import top.alazeprt.sfmod.block.*;
 import top.alazeprt.sfmod.entity.custom.AndyLauEntity;
 import top.alazeprt.sfmod.item.CustomSpawnEgg;
 import top.alazeprt.sfmod.item.HongBaoItem;
@@ -69,6 +68,72 @@ public class SpringFestivalMod implements ModInitializer {
             Registries.BLOCK,
             Identifier.of("sfmod", "fuyin4"),
             new FuyinBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK).noCollision().nonOpaque())
+    );
+
+    public static final Block COUPLETS_HORIZONTAL = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_horizontal"),
+            new CoupletsHorizontalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_VERTICAL = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_vertical"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_TOP_1 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_top_1"),
+            new CoupletsHorizontalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_TOP_2 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_top_2"),
+            new CoupletsHorizontalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_TOP_3 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_top_3"),
+            new CoupletsHorizontalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_LEFT_1 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_left_1"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_LEFT_2 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_left_2"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_LEFT_3 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_left_3"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_RIGHT_1 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_right_1"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_RIGHT_2 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_right_2"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
+    );
+
+    public static final Block COUPLETS_RIGHT_3 = Registry.register(
+            Registries.BLOCK,
+            Identifier.of("sfmod", "couplets_right_3"),
+            new CoupletsVerticalBlock(FabricBlockSettings.copy(Blocks.GRASS_BLOCK))
     );
 
     public static final Item ANDY_LAU_EGG = Registry.register(
@@ -130,6 +195,72 @@ public class SpringFestivalMod implements ModInitializer {
             new HongBaoItem(new Item.Settings())
     );
 
+    public static final Item COUPLETS_VERTICAL_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_vertical"),
+            new BlockItem(COUPLETS_VERTICAL, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_HORIZONTAL_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_horizontal"),
+            new BlockItem(COUPLETS_HORIZONTAL, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_TOP_1_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_top_1"),
+            new BlockItem(COUPLETS_TOP_1, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_TOP_2_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_top_2"),
+            new BlockItem(COUPLETS_TOP_2, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_TOP_3_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_top_3"),
+            new BlockItem(COUPLETS_TOP_3, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_LEFT_1_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_left_1"),
+            new BlockItem(COUPLETS_LEFT_1, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_LEFT_2_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_left_2"),
+            new BlockItem(COUPLETS_LEFT_2, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_LEFT_3_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_left_3"),
+            new BlockItem(COUPLETS_LEFT_3, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_RIGHT_1_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_right_1"),
+            new BlockItem(COUPLETS_RIGHT_1, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_RIGHT_2_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_right_2"),
+            new BlockItem(COUPLETS_RIGHT_2, new Item.Settings())
+    );
+
+    public static final Item COUPLETS_RIGHT_3_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of("sfmod", "couplets_right_3"),
+            new BlockItem(COUPLETS_RIGHT_3, new Item.Settings())
+    );
+
     public static final RegistryKey<ItemGroup> SF_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of("sfmod", "sf_group"));
 
     public static final ItemGroup SF_GROUP = Registry.register(Registries.ITEM_GROUP, SF_GROUP_KEY,
@@ -158,6 +289,17 @@ public class SpringFestivalMod implements ModInitializer {
             itemGroup.add(HONGBAO2_ITEM);
             itemGroup.add(HONGBAO3_ITEM);
             itemGroup.add(HONGBAO4_ITEM);
+            itemGroup.add(COUPLETS_VERTICAL_ITEM);
+            itemGroup.add(COUPLETS_HORIZONTAL_ITEM);
+            itemGroup.add(COUPLETS_TOP_1_ITEM);
+            itemGroup.add(COUPLETS_TOP_2_ITEM);
+            itemGroup.add(COUPLETS_TOP_3_ITEM);
+            itemGroup.add(COUPLETS_LEFT_1_ITEM);
+            itemGroup.add(COUPLETS_LEFT_2_ITEM);
+            itemGroup.add(COUPLETS_LEFT_3_ITEM);
+            itemGroup.add(COUPLETS_RIGHT_1_ITEM);
+            itemGroup.add(COUPLETS_RIGHT_2_ITEM);
+            itemGroup.add(COUPLETS_RIGHT_3_ITEM);
         });
         new Thread(() -> {
             while (true) {
